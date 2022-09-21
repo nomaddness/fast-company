@@ -1,6 +1,6 @@
 import React from "react";
 
-const BookMark = {
+const BookMark = ({ status, ...rest }) => {
 
 }
 

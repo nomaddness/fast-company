@@ -1,6 +1,6 @@
 import React from "react";
 
-const Quality = {
+const Quality = ({ color, name, _id }) => {
 
 }
 
