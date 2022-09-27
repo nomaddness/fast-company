@@ -1,32 +1,30 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import Users from "./components/users";
-import api from "./api";
 import SearchStatus from "./components/searchStatus";
+import api from "./api"
 
-const App = () => {
-  const initialState = api.users.fetchAll();
-  const [users, setUsers] = useState(initialState);
-
-  const handleDelete = (userId) => {
-    setUsers(users.filter((user) => user._id !== userId));
-  };
-  const handleToggleBookMark = (userid) => {
-    const newUser = users.map((item) => {
-      if (userid === item._id) {
-        // return {...item, bookmark: !item.bookmark}
-        item.bookmark = !item.bookmark
-      } 
-      return item
-    })
-    setUsers(newUser)
-  }
-
-  return (
-    <div>
-      <SearchStatus length={users.length}/>
-      <Users onDelete={handleDelete} users={users} onHandleClick={handleToggleBookMark}/>
-    </div>
-  );
-};
+function App() {
+    const [users, setUsers] = useState(api.users.fetchAll());
+    const handleDelete = (userId) => {
+        setUsers(users.filter((user) => user._id !== userId));
+    };
+    const handleToggleBookMark = (id) => {
+        setUsers(
+            users.map((user) => {
+                if (user._id === id) {
+                    return { ...user, bookmark: !user.bookmark };
+                }
+                return user;
+            })
+        );
+        console.log(id);
+    }
+    return (
+        <div>
+            <SearchStatus length={users.length} />
+            <Users onDelete={handleDelete} onToggleBookMark={handleToggleBookMark} users={users} />
+        </div>
+    );
+}
 
 export default App;
