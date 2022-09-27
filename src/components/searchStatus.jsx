@@ -24,4 +24,3 @@ const SearchStatus = ({ length }) => {
 };
 
 export default SearchStatus;
-
