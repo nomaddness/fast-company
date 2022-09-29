@@ -49,7 +49,7 @@ User.propTypes = {
     completedMeetings: PropTypes.number.isRequired,
     rate: PropTypes.number.isRequired,
     onDelete: PropTypes.func.isRequired,
-    bookmark: PropTypes.boolean.isRequired,
+    bookmark: PropTypes.bool.isRequired,
     onToggleBookMark: PropTypes.func.isRequired
 };
 
