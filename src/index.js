@@ -4,7 +4,6 @@ import App from "./App.js";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 import reportWebVitals from "./reportWebVitals";
-//import Users from './components/users.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
