@@ -29,10 +29,7 @@ const Users = ({ users: allUsers, ...rest }) => {
     const filteredUsers = selectedProf
         ? allUsers.filter((user) => user.profession === selectedProf)
         : allUsers;
-    const count = filteredUsers.length;
-    const userCrop = paginate(filteredUsers, currentPage, pageSize);
     const clearFilter = () => {
-        setSelectedProf();
     };
     return (
         <div className="d-flex">
